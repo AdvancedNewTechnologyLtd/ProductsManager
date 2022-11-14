@@ -1,0 +1,26 @@
+﻿@inherits OwningComponentBase<ApplicationDbContext>
+
+ 
+
+
+
+@code {
+    private IQueryable<Product>? products;
+    
+    private string? searchName;
+    
+    protected override void OnParametersSet()
+    {
+        UpdateFilter();
+    }
+
+    void UpdateFilter()
+    {
+        products = Service.Products.OrderBy(x => x.ProductId).AsNoTracking();
+                
+        if (!string.IsNullOrEmpty(searchName))
+        {
+            products = products.Where(x => EF.Functions.Like(x.Name, searchName.Replace("%", "\\%") + "%", "\\"));
+        }
+    }
+}

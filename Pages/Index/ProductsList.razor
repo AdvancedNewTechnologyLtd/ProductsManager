@@ -1,12 +1,24 @@
 ﻿@inherits OwningComponentBase<ApplicationDbContext>
 
+    <style>
+        .col-title-text[b-b7yucal7gj]{
+            color:deeppink;
+        }
+
+        a, .btn-link{
+            color:blueviolet;
+        }
+
+    </style>
+
+
 <QuickGrid Class="products" Items="@products" Pagination="@pagination">
     <PropertyColumn Property="@(p => p.Category)" Sortable="true" />
     <PropertyColumn Property="@(p => p.Subcategory)" Sortable="true" />
     <PropertyColumn Property="@(p => p.Name)" Sortable="true">
         <ColumnOptions>
-            <input @bind="@searchName" placeholder="Search..." class="form-control" autofocus
-                   @bind:event="oninput" @bind:after="UpdateFilter" />
+            @*<input @bind="@searchName" placeholder="Search..." class="form-control" autofocus @bind:event="oninput" @bind:after="UpdateFilter" />*@
+            <input @bind="@searchName" placeholder="Search..." class="form-control" autofocus @bind:event="oninput" />
         </ColumnOptions>
     </PropertyColumn>
     <TemplateColumn Title="Price" Align="@Align.Right" SortBy="@(GridSort<Product>.ByAscending(p => p.PriceCents))">

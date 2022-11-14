@@ -7,8 +7,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection")!;
-builder.Services
-    .AddDbContextFactory<ApplicationDbContext>(options => options.UseSqlite(connectionString));
+builder.Services.AddDbContextFactory<ApplicationDbContext>(options => options.UseSqlite(connectionString));
 
 builder.Services.AddRazorPages();
 builder.Services.AddQuickGridEntityFrameworkAdapter();

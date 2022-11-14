@@ -2,12 +2,167 @@
 
 <PageTitle>ProductsManager</PageTitle>
 
-<div class="page">
-    <main>
-        <HeaderBar />
 
-        <article class="content px-4">
-            @Body
-        </article>
-    </main>
-</div>
+<style>
+
+
+   
+
+
+</style>
+
+<main>
+
+    <div id="root">
+        <div class="sc-jmNpzm gGwiLZ">
+            <div class="sc-jWEIYm ipoIUo">
+                <HeaderBar />
+                <div class="sc-eEOqmf icZpZm">
+                    @* Side Bar *@
+                    <div class="sc-ESujJ cESDnq">
+
+                        @* Side Bar (mini) *@
+                        <div class="sc-fEOsli joJrU">
+                            <div class="sc-bjUoiL fRRIRy">
+                                <div class="sc-idiyUo iccImf">
+                                    <div id="IconExplorer" title="Explorer (Ctrl+Shift+E)" class="sc-iBkjds tMYxq">
+                                        <img src="https://beta.solpg.io/icons/sidebar/explorer.webp" class=" sc-ftvSup frAEi">
+                                    </div>
+                                    <div id="IconBuild &amp; Deploy" title="Build &amp; Deploy (Ctrl+Shift+B)" class="sc-iBkjds tMYxq">
+                                        <img src="https://beta.solpg.io/icons/sidebar/build.png" class="sc-ftvSup frAEi">
+                                    </div><div id="IconTest" title="Test (Ctrl+Shift+D)" class="sc-iBkjds tMYxq active">
+                                        <img src="https://beta.solpg.io/icons/sidebar/test.png" class="sc-ftv Sup frAEi">
+                                    </div>
+                                </div>
+
+                                <div class="sc-dIouRR bhKIKv" style="position: fixed; bottom: 0px;">
+                                    <a class="sc-papXJ erBNyg" href="https://github.com/solana-playground/solana-playground" target="_blank" rel="noopener">
+                                        <div title="Settings" class="sc-iBkjds tMYxq">
+                                            <img src="https://beta.solpg.io/icons/sidebar/settings.webp" class="sc-ftvSup frAEi">
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        @* Side Bar (Expanded) *@
+                        <div class="side-right" style="position: relative; user-select: auto; width: 320px; height: 100%; max-width: 1109.25px; min-height: 100%; box-sizing: border-box; flex-shrink: 0;">
+
+                            <div class="sc-jGprRt fgpwuR">
+
+                                <div class="sc-bPyhqo cBpixF">
+                                    <span> EXPLORER </span>
+                                </div>
+
+                                <div class="sc-hxWoir iJmBhL">
+                                    <div class="sc-jQHtVU bTqjHN">
+                                        <div>
+                                        </div>
+                                        <div>Start by creating a new project.</div>
+                                    </div>
+                                    <button class="sc-bBrHrO evosHR" kind="outline" @onclick="ShowPopup">
+                                        <span class="btn-spinner"></span>
+                                        <span class="left-icon"><svg xmlns="http://www.w3.org/2000/svg" stroke="currentColor" fill="currentColor" stroke-width="0" width="1em" height="1em" viewBox="0 0 12 16"><path fill-rule="evenodd" d="M12 9H7v5H5V9H0V7h5V2h2v5h5v2z"></path></svg></span>Create a new project
+                                    </button>
+
+                                </div>
+
+
+
+
+
+                            </div>
+
+
+                        </div>
+
+
+
+
+
+                    </div>
+                    <div class="sc-jmnVvD akcPe">
+                        <div class="sc-jmnVvD akcPe">
+                            <div>
+                                @Body
+                            </div>
+                        </div>
+                    </div>
+                    @* <FooterBar />*@
+                </div>
+
+
+                @{
+                    if (@isPopupOn)
+                    {
+                        @* Popup Project Name *@
+                        <div class="sc-fmRtwQ cUeXkr">
+                            <div class="sc-hNKHps fNA-dUk">
+                                <div class="sc-cuqtlR bgqUnA">
+                                    <div class="sc-fSUSjI OfCKK">
+                                        <div class="sc-bTmccw fSTMbj">Project name</div>
+                                        <input placeholder="my first project..." class="sc-gicCDI budLjI touched" autocomplete="off" value="">
+                                    </div>
+                                    <div class="sc-fThYeS tidje">
+                                        <div class="sc-bTmccw fSTMbj">Choose a framework</div>
+                                        <div class="sc-BrFsL irQccZ">
+                                            <div class="sc-bjuIDw dqvbKZ">
+                                                <div class="sc-hgZZql goAGCx">
+                                                    <img src="https://www.anchor-lang.com/_next/image?url=%2Flogo.png&amp;w=128&amp;q=80" alt="Anchor">
+                                                </div>
+                                                <div class="sc-fjqEFS ckhRvp">Icon #1</div>
+                                            </div>
+                                            <div class="sc-bjuIDw dqvbKZ">
+
+                                                <div class="sc-hgZZql goAGCx">
+                                                    <img src="https://www.anchor-lang.com/_next/image?url=%2Flogo.png&amp;w=128&amp;q=80" alt="Anchor">
+                                                </div>
+                                                <div class="sc-fjqEFS ckhRvp">Icon #2</div>
+                                            </div>
+                                            <div class="sc-bjuIDw dqvbKZ">
+                                                <div class="sc-hgZZql cpBHWx">
+                                                    <img src="https://www.anchor-lang.com/_next/image?url=%2Flogo.png&amp;w=128&amp;q=80" alt="Anchor">
+                                                </div>
+                                                <div class="sc-fjqEFS ckhRvp">Icon #3</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="sc-cZwWEu ekHijD">
+                                    <button class="sc-bBrHrO csxhfM" kind="transparent" @onclick="ClosePopup">
+                                        <span class="btn-spinner"> </span>Cancel
+                                    </button><button class="sc-bBrHrO crLbFY" disabled="" kind="primary-transparent">
+                                        <span class="btn-spinner"> </span>Create
+                                    </button>
+                                </div>
+                                <button class="sc-jTYCaT jNyuYV"></button>
+                            </div>
+                        </div>
+                    }
+                }
+
+            </div>
+        </div>
+    </div>
+</main>
+
+
+@code{
+
+
+     // Display/Hide Popup
+    private bool isPopupOn { get; set; } = false;
+
+
+    protected override async Task OnInitializedAsync()
+    {
+        isPopupOn = true;
+    }
+
+
+    private void ShowPopup() => isPopupOn = true;    
+    private void ClosePopup() => isPopupOn = false;
+
+        
+}

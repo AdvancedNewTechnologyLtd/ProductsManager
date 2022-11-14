@@ -1,8 +1,8 @@
-﻿@using System.Linq.Expressions
+﻿﻿@using System.Linq.Expressions
 @inject ApplicationDbContext Db
 
 <div class="input-group w-50">
-    <select @bind="@selectedCategory" @bind:after="NotifyCategoryChanged" class="form-select @EditContext?.FieldCssClass(categoryFieldIdentifier)" aria-label="Category">
+   @* <select @bind="@selectedCategory" @bind:after="NotifyCategoryChanged" class="form-select @EditContext?.FieldCssClass(categoryFieldIdentifier)" aria-label="Category">
         <option value="">(all)</option>
         @foreach (var category in categories ?? Array.Empty<string>())
         {
@@ -18,7 +18,29 @@
         {
             <option>@subcategory</option>
         }
+    </select>*@
+
+
+    <select @bind="@selectedCategory" class="form-select @EditContext?.FieldCssClass(categoryFieldIdentifier)" aria-label="Category">
+    <option value="">(all)</option>
+    @foreach (var category in categories ?? Array.Empty<string>())
+    {
+    <option>@category</option>
+    }
     </select>
+
+    <span class="input-group-text">&gt;</span>
+
+    <select @bind="@selectedSubcategory" class="form-select @EditContext?.FieldCssClass(subcategoryFieldIdentifier)" aria-label="Subcategory">
+    <option value="">(all)</option>
+    @foreach (var subcategory in subcategories ?? Array.Empty<string>())
+    {
+    <option>@subcategory</option>
+    }
+    </select>
+
+
+
 </div>
 
 @code {
